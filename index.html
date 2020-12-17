@@ -291,7 +291,6 @@
 						img.setAttribute("src",'imgs/zhange'+(num++)+'.jpg');
 						td.appendChild(img);
 						n++;
-						console.log(j,n);
 					}
 					else if(i==1&&(j==3||j==4||j==8||j==9)){
 						var td=document.createElement("td");
@@ -473,7 +472,7 @@
 				image.src=that.src;
 				image.setAttribute("style","height:48px; width:32px;");
 				imgBigger=setInterval(function(){
-					if(image.height<300){
+					if(image.height<280){
 						image.setAttribute("style","height:"+image.height*1.12+"px; width:"+image.width*1.12+"px;");
 					}
 				},80)
