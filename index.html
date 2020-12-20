@@ -421,34 +421,34 @@
 			function heartBigger(){
 				var timeid=setInterval(function(){
 					var now=getStyle(heart,"height");
-					if(parseInt(now)==30){
+					if(parseInt(now)>30){
 						clearInterval(timeid);
 					}else{
-						heart.style.height=parseInt(now)+1+"px";
-						heart.style.width=parseInt(now)+1+"px";
+						heart.style.height=parseInt(now)+1.5+"px";
+						heart.style.width=parseInt(now)+1.5+"px";
 					}
-				},5);
+				},8);
 			}
 			function heartShrink(){
 				var timeid=setInterval(function(){
 					var now=getStyle(heart,"height");
-					if(parseInt(now)==20){
+					if(parseInt(now)<21){
 						clearInterval(timeid);
 					}else{
-						heart.style.height=parseInt(now)-1+"px";
-						heart.style.width=parseInt(now)-1+"px";
+						heart.style.height=parseInt(now)-1.5+"px";
+						heart.style.width=parseInt(now)-1.5+"px";
 					}
-				},5);
+				},8);
 			}
 			setInterval(function(){
 				var now=getStyle(heart,"height");
-				if(parseInt(now)==20){
+				if(parseInt(now)<21){
 					heartBigger();
 				}
 				else{
 					heartShrink();
 				}
-			}, 400);
+			}, 500);
 			//点击放大心形图片
 			var imgs=document.getElementById("heart").getElementsByTagName("img");
 			var bigger=document.getElementById("bimg");
