@@ -415,7 +415,7 @@
 					}
 				}
 			}
-			//心形放大
+			//跳动的心心
 			var heart=document.getElementsByClassName("banner1")[0].getElementsByClassName("button")[0].getElementsByTagName("img")[0];
 			var now=getStyle(heart,"height");
 			function heartBigger(){
@@ -449,6 +449,7 @@
 					heartShrink();
 				}
 			}, 400);
+			//点击放大心形图片
 			var imgs=document.getElementById("heart").getElementsByTagName("img");
 			var bigger=document.getElementById("bimg");
 			heart.parentNode.setAttribute("onclick","nagnify()");
