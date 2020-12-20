@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>注册账号</title>
+		<meta charset="utf-8"/>
+		<style type="text/css">
+			*{
+    			padding: 0;
+    			margin: 0;
+			}
+			input:focus{
+				outline: none;
+			}
+			input{
+				border: 0;
+			}
+			.container{
+				width: 350px;
+				margin: 200px auto; 
+			}
+			.user,.code{
+				width: 350px;
+				height: 50px;
+				border: solid 1px #c8c8c8;
+				line-height: 50px;
+			}
+			.user input,.code input{
+				font-size: 16px;
+				font-weight: bold;
+			}
+			.user p,.code p{
+				width: 90px;
+				color: #535152;
+				font-size: 14px;
+				display: inline-block;
+				padding-left: 20px;
+			}
+			.user p{
+				letter-spacing: 5px;
+			}
+			.container>p{
+				height: 35px;
+				line-height: 35px;
+				color: #a5a5a5;
+				font-size: 10px;
+			}
+			.register{
+				width: 350px;
+				height: 50px;
+				line-height: 50px;
+				text-align: center;
+				color: #ffffff;
+				background: #f50516;
+			}
+		</style>
+	</head>
+	<body>
+		<form class="container">
+			<div class="user">
+				<p>用户名</p>
+				<input type="text" value="" name="username" onfocus="userNameFocus()" onblur="userNameBlur()"/>
+			</div>
+			<p></p>
+			<div class="code">
+				<p>设置密码</p>
+				<input type="password" value="" name="code" onfocus="codeFocus()" onblur="codeBlur()"/>
+			</div>
+			<p></p>
+			<input class="register" type="button" value="立即注册" name="register" onclick="registerSuccess()"/>
+		</form>
+		<script type="text/javascript">
+			var pNodes=document.getElementsByTagName("p");
+			var inputNodes=document.getElementsByTagName("input");
+			function userNameFocus(){
+				pNodes[1].innerHTML="支持中文数字";
+			}
+			function userNameBlur(){
+				if(inputNodes[0].value==""){
+					pNodes[1].innerHTML="用户名不能为空";
+				}
+				else{
+					pNodes[1].innerHTML="";
+				}
+			}
+			function codeFocus(){
+				pNodes[3].innerHTML="建议使用两种字符组合";
+			}
+			function codeBlur(){
+				if(inputNodes[1].value==""){
+					pNodes[3].innerHTML="密码不能为空";
+				}
+				else{
+					pNodes[3].innerHTML="";
+				}
+			}
+			function registerSuccess(){
+				var p=document.createElement("p");
+				p.innerHTML="注册成功！"+"<br/>"+"用户名："+inputNodes[0].value+"<br/>"+"密码："+inputNodes[1].value;
+				document.body.appendChild(p);
+				p.setAttribute("style", "line-height:60px;color:red;position:fixed;top:220px;left:1100px");
+			}
+		</script>
+	</body>
+</html>
